@@ -28,15 +28,15 @@ const catalogItems = [
   },
   {
     src: totem2,
-    alt: "Tótem digital con anuncio en aeropuerto",
-    title: "Aeropuertos y Transporte",
+    alt: "Tótem",
+    title: "Tótem Window",
     description:
-      "Pantallas robustas para entornos 24/7 con información operativa, wayfinding y publicidad de alto impacto. Diseñadas para soportar uso intensivo y condiciones exigentes.",
+      "Soporte de suelo compacto para monitores pequeños, con espacio para integrar un ordenador. Su diseño elegante y versátil se adapta fácilmente a distintos entornos, destacando por su sencillez y originalidad.",
     sizeClass: "md:max-w-[480px] aspect-[4/5]",
   },
   {
     src: totem3,
-    alt: "Tótem digital con anuncio en museo",
+    alt: "Kiosko",
     title: "Kiosko Cube",
     description:
       "Atril funcional de aluminio diseñado para pantallas de hasta 17”, con estructura robusta y sistema de apertura frontal con cerradura. Su interior permite integrar impresora y periféricos, y la pantalla se fija fácilmente mediante soporte VESA.",
@@ -52,10 +52,10 @@ const catalogItems = [
   },
   {
     src: totem5,
-    alt: "Tótem digital con anuncio en museo",
-    title: "Espacios Culturales",
+    alt: "Kiosko",
+    title: "Kiosko Crew",
     description:
-      "Experiencias interactivas para museos y exposiciones. Contenido multimedia, multi-idioma y accesibilidad integrada para enriquecer la visita.",
+      "Soporte de suelo compacto para monitores de pequeño tamaño, con espacio para integrar un ordenador. Destaca por su diseño versátil, elegante y sencillo, adaptándose fácilmente a entornos como conferencias, exposiciones o zonas de paso.",
     sizeClass: "md:max-w-[400px] aspect-[3/4]",
   },
 ];
