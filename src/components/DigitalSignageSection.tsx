@@ -43,10 +43,10 @@ const catalogItems = [
   },
   {
     src: totem4,
-    alt: "Tótem digital con anuncio en oficina corporativa",
-    title: "Entornos Corporativos",
+    alt: "Kiosko",
+    title: "Kiosko Posh",
     description:
-      "Comunicación interna, reservas de salas y dashboards en tiempo real. Diseño elegante que se integra en el lenguaje visual de cualquier oficina.",
+      "Atril versátil y elegante diseñado para una interacción visual intuitiva, adaptable en formato horizontal o vertical. Compacto y funcional, permite integrar pantallas de 32” a 55”, siendo ideal para espacios como entradas, zonas de espera o áreas comerciales.",
     sizeClass: "md:max-w-[460px] aspect-square",
   },
   {
