@@ -8,59 +8,18 @@ import totem2 from "@/assets/totem-2.jpg";
 import totem3 from "@/assets/totem-3.jpg";
 import totem4 from "@/assets/totem-4.jpg";
 
-const catalogItems = [
-  {
-    src: totemMain,
-    alt: "Tótem digital interactivo principal con anuncio",
-    title: "Tótem Interactivo Premium",
-    description:
-      "Solución insignia de gran formato pensada para hubs de alto tráfico. Pantalla táctil de alta luminosidad, contenido dinámico y experiencia inmersiva para captar la atención del usuario.",
-    sizeClass: "md:max-w-[520px] aspect-[4/5]",
-  },
-  {
-    src: totem1,
-    alt: "Tótem digital con anuncio en centro comercial",
-    title: "Centros Comerciales",
-    description:
-      "Tótems orientados al retail con campañas segmentadas por franja horaria. Refuerza promociones, novedades y comunicación de marca en el punto de decisión.",
-    sizeClass: "md:max-w-[420px] aspect-[3/4]",
-  },
-  {
-    src: totem2,
-    alt: "Tótem digital con anuncio en aeropuerto",
-    title: "Aeropuertos y Transporte",
-    description:
-      "Pantallas robustas para entornos 24/7 con información operativa, wayfinding y publicidad de alto impacto. Diseñadas para soportar uso intensivo y condiciones exigentes.",
-    sizeClass: "md:max-w-[480px] aspect-[4/5]",
-  },
-  {
-    src: totem3,
-    alt: "Tótem digital con anuncio en museo",
-    title: "Espacios Culturales",
-    description:
-      "Experiencias interactivas para museos y exposiciones. Contenido multimedia, multi-idioma y accesibilidad integrada para enriquecer la visita.",
-    sizeClass: "md:max-w-[400px] aspect-[3/4]",
-  },
-  {
-    src: totem4,
-    alt: "Tótem digital con anuncio en oficina corporativa",
-    title: "Entornos Corporativos",
-    description:
-      "Comunicación interna, reservas de salas y dashboards en tiempo real. Diseño elegante que se integra en el lenguaje visual de cualquier oficina.",
-    sizeClass: "md:max-w-[460px] aspect-square",
-  },
+const totemSecondary = [
+  { src: totem1, alt: "Tótem digital con anuncio en centro comercial" },
+  { src: totem2, alt: "Tótem digital con anuncio en aeropuerto" },
+  { src: totem3, alt: "Tótem digital con anuncio en museo" },
+  { src: totem4, alt: "Tótem digital con anuncio en oficina corporativa" },
 ];
-
-const bubbles = ["Tótems interactivos", "Kioskos táctiles", "Gestión de colas", "Soluciones LED"];
 
 const DigitalSignageSection = () => (
   <section id="digital-signage" className="py-12 md:py-16 bg-background">
     <div className="container mx-auto px-4">
       <ScrollReveal>
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <span className="inline-block text-xs uppercase tracking-[0.3em] text-accent font-primary font-bold mb-4">
-            01
-          </span>
           <h2 className="text-3xl md:text-5xl font-bold text-foreground">Digital Signage</h2>
         </div>
       </ScrollReveal>
@@ -91,43 +50,50 @@ const DigitalSignageSection = () => (
         </div>
       </ScrollReveal>
 
-      {/* Catálogo: filas alternadas imagen + texto */}
-      <div className="max-w-5xl mx-auto space-y-16 md:space-y-20 mb-20">
-        {catalogItems.map((item, i) => {
-          const imageLeft = i % 2 === 0;
-          return (
-            <ScrollReveal key={i} delay={0.05}>
-              <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-                <motion.div
-                  className={`relative rounded-2xl overflow-hidden shadow-2xl w-full ${item.sizeClass} mx-auto ${
-                    imageLeft ? "md:order-1" : "md:order-2"
-                  }`}
-                  whileHover={{ scale: 1.015 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <img
-                    src={item.src}
-                    alt={item.alt}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
-                </motion.div>
+      {/* Hero image + 4 secondary grid */}
+      <ScrollReveal delay={0.15}>
+        <div className="grid lg:grid-cols-2 gap-4 lg:gap-5 mb-20 max-w-4xl mx-auto">
+          <motion.div
+            className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/5] lg:aspect-auto lg:h-full min-h-[320px]"
+            whileHover={{ scale: 1.015 }}
+            transition={{ duration: 0.3 }}
+          >
+            <img
+              src={totemMain}
+              alt="Tótem digital interactivo principal con anuncio"
+              className="w-full h-full object-cover"
+              loading="lazy"
+              width={1024}
+              height={1280}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+          </motion.div>
 
-                <div className={imageLeft ? "md:order-2" : "md:order-1"}>
-                  <span className="inline-block text-xs uppercase tracking-[0.25em] text-accent font-bold mb-3">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">{item.title}</h3>
-                  <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
-            </ScrollReveal>
-          );
-        })}
-      </div>
+          <div className="grid grid-cols-2 gap-3 lg:gap-4">
+            {totemSecondary.map((t, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ delay: i * 0.08, duration: 0.4 }}
+                whileHover={{ y: -4, scale: 1.02 }}
+                className="relative rounded-xl overflow-hidden shadow-lg border border-border group cursor-pointer aspect-[4/5]"
+              >
+                <img
+                  src={t.src}
+                  alt={t.alt}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
+                  width={896}
+                  height={1152}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </ScrollReveal>
 
       {/* Sub-section: Gestión de Contenido (compact) */}
       <ScrollReveal>
