@@ -129,22 +129,29 @@ const DigitalSignageSection = () => (
 
       {/* Soportes / Mounts */}
       <ScrollReveal>
-        <div className="max-w-5xl mx-auto mb-20">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
+        <div className="max-w-3xl mx-auto mb-20">
+          <div className="grid grid-cols-2 md:grid-cols-[160px_repeat(2,minmax(0,1fr))] gap-3 md:gap-4 items-stretch">
             {/* Tube vertical a la izquierda (ocupa toda la altura) */}
             <motion.div
               whileHover={{ y: -4, scale: 1.01 }}
               transition={{ type: "spring", stiffness: 200, damping: 18 }}
-              className="relative rounded-xl overflow-hidden shadow-xl bg-muted md:row-span-2 aspect-[3/4] md:aspect-auto"
+              className="relative rounded-xl overflow-hidden shadow-xl md:row-span-2 aspect-[2/3] md:aspect-auto"
             >
               <img
                 src={mountTube}
+                alt=""
+                className="absolute inset-0 w-full h-full object-cover scale-110 blur-xl opacity-45"
+                loading="lazy"
+                aria-hidden="true"
+              />
+              <img
+                src={mountTube}
                 alt="Tube"
-                className="w-full h-full object-contain"
+                className="relative z-10 w-full h-full object-contain p-5 md:p-6"
                 loading="lazy"
               />
-              <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/70 to-transparent pointer-events-none" />
-              <span className="absolute bottom-3 left-0 right-0 text-center text-white font-bold text-base md:text-lg tracking-wide drop-shadow-lg">
+              <div className="absolute inset-x-0 bottom-0 z-20 h-24 bg-gradient-to-t from-primary/80 to-transparent pointer-events-none" />
+              <span className="absolute bottom-3 left-0 right-0 z-30 text-center text-primary-foreground font-bold text-base md:text-lg tracking-wide drop-shadow-lg">
                 Tube
               </span>
             </motion.div>
@@ -155,16 +162,23 @@ const DigitalSignageSection = () => (
                 key={m.label}
                 whileHover={{ y: -4, scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 200, damping: 18 }}
-                className="relative rounded-xl overflow-hidden shadow-xl aspect-square bg-muted"
+                className="relative rounded-xl overflow-hidden shadow-xl aspect-square"
               >
                 <img
                   src={m.src}
+                  alt=""
+                  className="absolute inset-0 w-full h-full object-cover scale-110 blur-xl opacity-45"
+                  loading="lazy"
+                  aria-hidden="true"
+                />
+                <img
+                  src={m.src}
                   alt={m.label}
-                  className="w-full h-full object-contain"
+                  className="relative z-10 w-full h-full object-contain p-3 md:p-4"
                   loading="lazy"
                 />
-                <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/70 to-transparent pointer-events-none" />
-                <span className="absolute bottom-2 left-0 right-0 text-center text-white font-bold text-sm md:text-base tracking-wide drop-shadow-lg">
+                <div className="absolute inset-x-0 bottom-0 z-20 h-20 bg-gradient-to-t from-primary/80 to-transparent pointer-events-none" />
+                <span className="absolute bottom-2 left-0 right-0 z-30 text-center text-primary-foreground font-bold text-sm md:text-base tracking-wide drop-shadow-lg">
                   {m.label}
                 </span>
               </motion.div>
