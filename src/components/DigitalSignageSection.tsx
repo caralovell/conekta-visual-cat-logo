@@ -8,16 +8,6 @@ import totem2 from "@/assets/totem-2.jpg";
 import totem3 from "@/assets/totem-3.jpg";
 import totem4 from "@/assets/totem-4.jpg";
 import totem5 from "@/assets/totem-5.jpg";
-import epaperDisplay from "@/assets/epaper-display.jpg";
-
-const epaperBubbles = [
-  "Señalética de aulas",
-  "Reservas de salas",
-  "Horarios",
-  "Calendarios académicos",
-  "Comunicación interna",
-  "Bajo consumo",
-];
 
 const catalogItems = [
   {
@@ -128,21 +118,6 @@ const DigitalSignageSection = () => (
               Pantallas de papel electrónico a todo color para universidades: ideales para señalética de aulas, reservas
               de salas, horarios, calendarios académicos y comunicación interna, con bajo consumo y máxima visibilidad.
             </p>
-            <div className="flex flex-wrap gap-2.5 mt-4">
-              {epaperBubbles.map((label, i) => (
-                <motion.span
-                  key={label}
-                  initial={{ opacity: 0, scale: 0.6, y: 10 }}
-                  whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ delay: i * 0.06, type: "spring", stiffness: 200, damping: 14 }}
-                  whileHover={{ scale: 1.08, y: -3 }}
-                  className="inline-flex items-center px-4 py-2 rounded-full bg-accent/10 border border-accent/30 text-sm font-medium text-foreground hover:bg-accent/20 hover:border-accent/60 transition-colors cursor-default shadow-sm"
-                >
-                  {label}
-                </motion.span>
-              ))}
-            </div>
           </div>
           <div className="flex gap-4 items-center">
             <motion.div
