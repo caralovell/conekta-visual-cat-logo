@@ -118,50 +118,43 @@ const DigitalSignageSection = () => (
 
       {/* === Section divider: 07 Tablets === */}
       <ScrollReveal>
-        <div className="max-w-5xl mx-auto mb-10">
+        <div className="max-w-4xl mx-auto mb-8 text-center">
           <div className="glow-line mb-6" />
-          <div className="flex items-baseline gap-4">
-            <span className="text-xs uppercase tracking-[0.3em] text-accent font-bold">07</span>
-            <h3 className="text-2xl md:text-3xl font-bold text-foreground">Tablets</h3>
-          </div>
+          <span className="block text-xs uppercase tracking-[0.3em] text-accent font-bold mb-3">07</span>
+          <h3 className="text-2xl md:text-3xl font-bold text-foreground">Tablets</h3>
         </div>
       </ScrollReveal>
 
-      {/* Tablet mounts gallery: Tube vertical left + 2x2 grid right */}
+      {/* Tablet mounts gallery */}
       <ScrollReveal delay={0.1}>
-        <div className="max-w-5xl mx-auto mb-16 grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] gap-4">
+        <div className="max-w-4xl mx-auto mb-16 grid grid-cols-2 md:grid-cols-5 gap-4 items-stretch">
           {/* Tube — vertical */}
-          <div className="relative rounded-2xl overflow-hidden bg-card border border-border aspect-[3/4] md:aspect-auto">
+          <div className="relative rounded-xl overflow-hidden bg-card border border-border aspect-[3/4]">
             <img
               src={mountTube}
               alt="Soporte Tube"
-              className="w-full h-full object-contain scale-[1.18] md:scale-[1.25]"
+              className="w-full h-full object-cover"
               loading="lazy"
             />
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-3">
-              <span className="text-white font-bold text-sm md:text-base">Tube</span>
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-foreground/70 to-transparent p-3">
+              <span className="text-background font-bold text-sm md:text-base">Tube</span>
             </div>
           </div>
 
-          {/* 2x2 grid */}
-          <div className="grid grid-cols-2 gap-4">
-            {[
-              { src: mountWall, label: "Wall View" },
-              { src: mountPortrait, label: "Portrait" },
-              { src: mountAngle, label: "Angle" },
-              { src: mountPlane, label: "Plane" },
-            ].map((m) => (
-              <div
-                key={m.label}
-                className="relative rounded-2xl overflow-hidden bg-card border border-border aspect-square"
-              >
-                <img src={m.src} alt={`Soporte ${m.label}`} className="w-full h-full object-cover" loading="lazy" />
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-3">
-                  <span className="text-white font-bold text-sm md:text-base">{m.label}</span>
-                </div>
+          {[
+            { src: mountWall, label: "Wall View" },
+            { src: mountPortrait, label: "Portrait" },
+            { src: mountAngle, label: "Angle" },
+            { src: mountPlane, label: "Plane" },
+          ].map((m) => (
+            <div key={m.label} className="relative rounded-xl overflow-hidden bg-card border border-border aspect-[3/4]">
+              <img src={m.src} alt={`Soporte ${m.label}`} className="w-full h-full object-cover" loading="lazy" />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-foreground/70 to-transparent p-3">
+                <span className="text-background font-bold text-sm md:text-base">{m.label}</span>
               </div>
             ))}
-          </div>
+            </div>
+          ))}
         </div>
       </ScrollReveal>
 
