@@ -9,11 +9,11 @@ import totem3 from "@/assets/totem-3.jpg";
 import totem4 from "@/assets/totem-4.jpg";
 import totem5 from "@/assets/totem-5.jpg";
 import epaperDisplay from "@/assets/epaper-display.png";
-import tabletTube from "@/assets/mount-tube.png";
-import tabletWallView from "@/assets/mount-wall.png";
-import tabletPortrait from "@/assets/mount-portrait.png";
-import tabletAngle from "@/assets/mount-angle.png";
-import tabletPlane from "@/assets/mount-plane.png";
+import tabletTube from "@/assets/tablet-tube.png";
+import tabletWallView from "@/assets/tablet-wall-view.png";
+import tabletPortrait from "@/assets/tablet-portrait.png";
+import tabletAngle from "@/assets/tablet-angle.png";
+import tabletPlane from "@/assets/tablet-plane.png";
 
 const catalogItems = [
   {
@@ -119,36 +119,38 @@ const DigitalSignageSection = () => (
       {/* ──────── Sección Tablets ──────── */}
       <ScrollReveal>
         <div className="max-w-5xl mx-auto mb-16">
-          {/* Divider con número y título */}
+          {/* Divider estilo hero */}
           <div className="flex items-center gap-4 mb-10">
-            <div className="h-px flex-1 bg-accent" />
-            <span className="text-xs uppercase tracking-[0.25em] text-accent font-bold">07</span>
-            <h3 className="text-2xl md:text-3xl font-bold text-foreground">Tablets</h3>
-            <div className="h-px flex-1 bg-accent" />
+            <span className="h-px flex-1 bg-accent/60" />
+            <div className="flex flex-col items-center gap-1">
+              <span className="text-xs uppercase tracking-[0.25em] text-accent font-bold">07</span>
+              <span className="text-sm uppercase tracking-[0.3em] text-accent font-medium">Tablets</span>
+            </div>
+            <span className="h-px flex-1 bg-accent/60" />
           </div>
 
-          {/* Layout: Tube vertical a la izquierda + grid 2x2 a la derecha */}
-          <div className="grid grid-cols-[1fr_2fr] md:grid-cols-[280px_1fr] gap-4 md:gap-6 items-stretch">
-            {/* Tube - izquierda, vertical */}
+          {/* Layout: Tube vertical izquierda + grid 2x2 derecha */}
+          <div className="grid grid-cols-[140px_1fr] md:grid-cols-[200px_1fr] gap-3 md:gap-4 items-center">
+            {/* Tube */}
             <motion.div
-              className="relative rounded-xl overflow-hidden bg-muted/20 h-full min-h-[360px] md:min-h-[480px]"
-              whileHover={{ scale: 1.01 }}
+              className="relative rounded-xl overflow-hidden bg-muted/20 aspect-[9/20] w-full"
+              whileHover={{ scale: 1.015 }}
               transition={{ duration: 0.3 }}
             >
               <img
                 src={tabletTube}
                 alt="Tablet Tube"
-                className="w-full h-full object-contain object-center"
+                className="w-full h-full object-contain object-bottom"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-              <span className="absolute bottom-4 left-4 text-white font-bold text-sm md:text-base tracking-wide drop-shadow-lg">
+              <div className="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-black/50 to-transparent" />
+              <span className="absolute bottom-3 left-3 text-white font-bold text-xs tracking-wide drop-shadow-lg">
                 Tube
               </span>
             </motion.div>
 
-            {/* Grid 2x2 a la derecha */}
-            <div className="grid grid-cols-2 gap-4 md:gap-6">
+            {/* Grid 2x2 */}
+            <div className="grid grid-cols-2 gap-3 md:gap-4">
               {[
                 { src: tabletWallView, label: "Wall View" },
                 { src: tabletPortrait, label: "Portrait" },
@@ -167,8 +169,8 @@ const DigitalSignageSection = () => (
                     className="w-full h-full object-cover"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-                  <span className="absolute bottom-3 left-3 text-white font-bold text-xs md:text-sm tracking-wide drop-shadow-lg">
+                  <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/50 to-transparent" />
+                  <span className="absolute bottom-2 left-2 text-white font-bold text-[11px] md:text-xs tracking-wide drop-shadow-lg">
                     {tab.label}
                   </span>
                 </motion.div>
