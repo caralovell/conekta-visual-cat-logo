@@ -9,11 +9,11 @@ import totem3 from "@/assets/totem-3.jpg";
 import totem4 from "@/assets/totem-4.jpg";
 import totem5 from "@/assets/totem-5.jpg";
 import epaperDisplay from "@/assets/epaper-display.png";
-import tabletTube from "@/assets/mount-tube.png";
-import tabletWallView from "@/assets/mount-wall.png";
-import tabletPortrait from "@/assets/mount-portrait.png";
-import tabletAngle from "@/assets/mount-angle.png";
-import tabletPlane from "@/assets/mount-plane.png";
+import tabletTube from "@/assets/tablet-tube.png";
+import tabletWallView from "@/assets/tablet-wall-view.png";
+import tabletPortrait from "@/assets/tablet-portrait.png";
+import tabletAngle from "@/assets/tablet-angle.png";
+import tabletPlane from "@/assets/tablet-plane.png";
 
 const catalogItems = [
   {
@@ -118,39 +118,32 @@ const DigitalSignageSection = () => (
 
       {/* ──────── Sección Tablets ──────── */}
       <ScrollReveal>
-        <div className="max-w-5xl mx-auto mb-16">
-          {/* Divider estilo hero */}
-          <div className="flex items-center gap-4 mb-10">
-            <span className="h-px flex-1 bg-accent/60" />
-            <div className="flex flex-col items-center gap-1">
-              <span className="text-xs uppercase tracking-[0.25em] text-accent font-bold">07</span>
-              <span className="text-sm uppercase tracking-[0.3em] text-accent font-medium">Tablets</span>
-            </div>
-            <span className="h-px flex-1 bg-accent/60" />
+        <div className="max-w-3xl mx-auto mb-16">
+          {/* Divider: 07 arriba, línea, TABLETS debajo */}
+          <div className="text-center mb-8">
+            <span className="block text-xs uppercase tracking-[0.25em] text-accent font-bold mb-2">07</span>
+            <div className="h-px w-full bg-accent/60 mb-2" />
+            <span className="block text-sm uppercase tracking-[0.35em] text-accent font-medium">Tablets</span>
           </div>
 
-          {/* Layout: Tube vertical izquierda + grid 2x2 derecha */}
-          <div className="grid grid-cols-[140px_1fr] md:grid-cols-[200px_1fr] gap-3 md:gap-4 items-center">
-            {/* Tube */}
-            <motion.div
-              className="relative rounded-xl overflow-hidden bg-muted/20 aspect-[9/20] w-full"
-              whileHover={{ scale: 1.015 }}
-              transition={{ duration: 0.3 }}
-            >
+          {/* Layout: Tube izquierda + grid 2x2 derecha */}
+          <div className="flex gap-3 items-stretch max-w-2xl mx-auto">
+            {/* Tube — columna estrecha */}
+            <div className="relative rounded-lg overflow-hidden bg-muted/10 w-[110px] md:w-[130px] flex-shrink-0">
               <img
                 src={tabletTube}
                 alt="Tablet Tube"
                 className="w-full h-full object-contain object-bottom"
                 loading="lazy"
               />
-              <div className="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-black/50 to-transparent" />
-              <span className="absolute bottom-3 left-3 text-white font-bold text-xs tracking-wide drop-shadow-lg">
+              <div className="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-black/40 to-transparent" />
+              <span className="absolute bottom-2 left-2 text-white font-semibold text-[10px] tracking-wide drop-shadow-lg">
                 Tube
               </span>
-            </motion.div>
+            </div>
 
             {/* Grid 2x2 */}
-            <div className="grid grid-cols-2 gap-3 md:gap-4">
+            <div className="grid grid-cols-2 gap-2.5 md:gap-3 flex-1">
               {[
                 { src: tabletWallView, label: "Wall View" },
                 { src: tabletPortrait, label: "Portrait" },
@@ -159,7 +152,7 @@ const DigitalSignageSection = () => (
               ].map((tab) => (
                 <motion.div
                   key={tab.label}
-                  className="relative rounded-xl overflow-hidden bg-muted/20 aspect-[4/3]"
+                  className="relative rounded-lg overflow-hidden bg-muted/10 aspect-[4/3]"
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.3 }}
                 >
@@ -169,8 +162,8 @@ const DigitalSignageSection = () => (
                     className="w-full h-full object-cover"
                     loading="lazy"
                   />
-                  <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/50 to-transparent" />
-                  <span className="absolute bottom-2 left-2 text-white font-bold text-[11px] md:text-xs tracking-wide drop-shadow-lg">
+                  <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/40 to-transparent" />
+                  <span className="absolute bottom-2 left-2 text-white font-semibold text-[10px] md:text-[11px] tracking-wide drop-shadow-lg">
                     {tab.label}
                   </span>
                 </motion.div>
