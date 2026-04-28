@@ -129,22 +129,8 @@ const DigitalSignageSection = () => (
             <h2 className="text-3xl md:text-5xl font-bold text-foreground leading-tight">Tablets</h2>
           </div>
 
-          {/* Layout: Tube izquierda + grid 2x2 derecha */}
-          <div className="flex gap-3 items-stretch max-w-2xl mx-auto">
-            {/* Tube — columna estrecha */}
-            <motion.div
-              className="relative w-[110px] md:w-[130px] flex-shrink-0 self-end"
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.3 }}
-            >
-              <img src={tabletTube} alt="Tablet Tube" className="w-full h-auto object-contain" loading="lazy" />
-              <span className="block text-center text-foreground font-semibold text-[10px] tracking-wide mt-2">
-                Tube
-              </span>
-            </motion.div>
-
-            {/* Grid 2x2 */}
-            <div className="grid grid-cols-2 gap-2.5 md:gap-3 flex-1">
+          {/* Grid 2x2 */}
+          <div className="grid grid-cols-2 gap-2.5 md:gap-3 max-w-2xl mx-auto">
               {[
                 { src: tabletWallView, label: "Wall View" },
                 { src: tabletPortrait, label: "Portrait" },
@@ -169,7 +155,6 @@ const DigitalSignageSection = () => (
                   </span>
                 </motion.div>
               ))}
-            </div>
           </div>
         </div>
       </ScrollReveal>
