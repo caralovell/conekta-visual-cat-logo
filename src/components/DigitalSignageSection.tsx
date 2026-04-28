@@ -9,11 +9,11 @@ import totem3 from "@/assets/totem-3.jpg";
 import totem4 from "@/assets/totem-4.jpg";
 import totem5 from "@/assets/totem-5.jpg";
 import epaperDisplay from "@/assets/epaper-display.png";
-import tabletTube from "@/assets/tablet-tube.png";
-import tabletWallView from "@/assets/tablet-wall-view.png";
-import tabletPortrait from "@/assets/tablet-portrait.png";
-import tabletAngle from "@/assets/tablet-angle.png";
-import tabletPlane from "@/assets/tablet-plane.png";
+import tabletTube from "@/assets/mount-tube.png";
+import tabletWallView from "@/assets/mount-wall.png";
+import tabletPortrait from "@/assets/mount-portrait.png";
+import tabletAngle from "@/assets/mount-angle.png";
+import tabletPlane from "@/assets/mount-plane.png";
 
 const catalogItems = [
   {
