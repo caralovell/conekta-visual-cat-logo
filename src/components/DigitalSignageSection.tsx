@@ -73,8 +73,8 @@ const DigitalSignageSection = () => (
       <ScrollReveal delay={0.1}>
         <div className="max-w-4xl mx-auto text-center mb-10">
           <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-            Soluciones personalizadas que consiguen acercar tu marca a los usuarios de forma fácil y sencilla, creando
-            una experiencia única.
+            Soluciones personalizadas diseñadas para mejorar la experiencia del huésped, facilitando una interacción
+            intuitiva y creando estancias memorables que conectan con cada visitante.
           </p>
         </div>
       </ScrollReveal>
