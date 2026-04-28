@@ -7,7 +7,6 @@ import totem1 from "@/assets/totem-1.jpg";
 import totem2 from "@/assets/totem-2.jpg";
 import totem3 from "@/assets/totem-3.jpg";
 import totem4 from "@/assets/totem-4.jpg";
-import totem5 from "@/assets/totem-5.jpg";
 
 const catalogItems = [
   {
@@ -37,9 +36,9 @@ const catalogItems = [
   {
     src: totem3,
     alt: "Tótem digital con anuncio en museo",
-    title: "Espacios Culturales",
+    title: "Kiosko Cube",
     description:
-      "Experiencias interactivas para museos y exposiciones. Contenido multimedia, multi-idioma y accesibilidad integrada para enriquecer la visita.",
+      "Atril funcional de aluminio diseñado para pantallas de hasta 17”, con estructura robusta y sistema de apertura frontal con cerradura. Su interior permite integrar impresora y periféricos, y la pantalla se fija fácilmente mediante soporte VESA.",
     sizeClass: "md:max-w-[400px] aspect-[3/4]",
   },
   {
@@ -51,12 +50,12 @@ const catalogItems = [
     sizeClass: "md:max-w-[460px] aspect-square",
   },
   {
-    src: totem5,
-    alt: "Tótems en distintos colores",
-    title: "Tótem Multicolor",
+    src: totem3,
+    alt: "Tótem digital con anuncio en museo",
+    title: "Espacios Culturales",
     description:
-      "Disponible en varios acabados de color para integrarse con la identidad visual de cada espacio, manteniendo un diseño compacto y elegante.",
-    sizeClass: "md:max-w-[460px] aspect-[4/5]",
+      "Experiencias interactivas para museos y exposiciones. Contenido multimedia, multi-idioma y accesibilidad integrada para enriquecer la visita.",
+    sizeClass: "md:max-w-[400px] aspect-[3/4]",
   },
 ];
 
