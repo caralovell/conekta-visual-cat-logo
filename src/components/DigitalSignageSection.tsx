@@ -40,7 +40,8 @@ const catalogItems = [
     title: "Kiosko Touch",
     description:
       "Kiosco de suelo con pantalla inclinada para mejorar la visibilidad y la interacción. Robusto, estable y versátil, permite integrar periféricos y adaptarse a múltiples usos como gestión de turnos o consulta de servicios.",
-    sizeClass: "md:max-w-[400px] aspect-[3/4]",
+    sizeClass: "md:max-w-[340px] aspect-[2/5]",
+    fit: "contain" as const,
   },
   {
     src: totem4,
@@ -93,8 +94,15 @@ const DigitalSignageSection = () => (
                   whileHover={{ scale: 1.015 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <img src={item.src} alt={item.alt} className="w-full h-full object-cover" loading="lazy" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    className={`w-full h-full ${item.fit === "contain" ? "object-contain" : "object-cover"}`}
+                    loading="lazy"
+                  />
+                  {item.fit !== "contain" && (
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+                  )}
                 </motion.div>
 
                 <div className={imageLeft ? "md:order-2" : "md:order-1"}>
