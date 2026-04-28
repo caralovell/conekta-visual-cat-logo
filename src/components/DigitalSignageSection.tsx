@@ -119,22 +119,29 @@ const DigitalSignageSection = () => (
       {/* ──────── Sección Tablets ──────── */}
       <ScrollReveal>
         <div className="max-w-3xl mx-auto mb-16">
-          {/* Divider: 07 arriba, línea, TABLETS debajo */}
-          <div className="text-center mb-8">
-            <span className="block text-xs uppercase tracking-[0.25em] text-accent font-bold mb-2">07</span>
-            <div className="h-px w-full bg-accent/60 mb-2" />
-            <span className="block text-sm uppercase tracking-[0.35em] text-accent font-medium">Tablets</span>
+          <div className="flex justify-center my-4">
+            <div className="glow-line" />
+          </div>
+          <div className="text-center max-w-3xl mx-auto mb-8">
+            <span className="inline-block text-xs uppercase tracking-[0.3em] text-accent font-primary font-bold mb-4">
+              07
+            </span>
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground leading-tight">Tablets</h2>
           </div>
 
           {/* Layout: Tube izquierda + grid 2x2 derecha */}
           <div className="flex gap-3 items-stretch max-w-2xl mx-auto">
             {/* Tube — columna estrecha */}
-            <div className="relative w-[110px] md:w-[130px] flex-shrink-0 self-end">
+            <motion.div
+              className="relative w-[110px] md:w-[130px] flex-shrink-0 self-end"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+            >
               <img src={tabletTube} alt="Tablet Tube" className="w-full h-auto object-contain" loading="lazy" />
               <span className="block text-center text-foreground font-semibold text-[10px] tracking-wide mt-2">
                 Tube
               </span>
-            </div>
+            </motion.div>
 
             {/* Grid 2x2 */}
             <div className="grid grid-cols-2 gap-2.5 md:gap-3 flex-1">
