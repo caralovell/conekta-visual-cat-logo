@@ -22,7 +22,7 @@ const catalogItems = [
     alt: "Tótem",
     title: "Tótem Square Lite Eco",
     description:
-      "Tótem sostenible fabricado con materiales reciclados, equivalente a unas 75 botellas de plástico, que combina diseño y responsabilidad ambiental. Incorpora panel acústico para mejorar el sonido y se produce con energía solar, reduciendo las emisiones a cero y ofreciendo una solución elegante y ecológica para cualquier espacio.,
+      "Tótem sostenible fabricado con materiales reciclados, equivalente a unas 75 botellas de plástico, que combina diseño y responsabilidad ambiental. Incorpora panel acústico para mejorar el sonido y se produce con energía solar, reduciendo las emisiones a cero y ofreciendo una solución elegante y ecológica para cualquier espacio.",
     sizeClass: "md:max-w-[420px] aspect-[3/4]",
   },
   {
