@@ -152,7 +152,6 @@ const DigitalSignageSection = () => (
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-foreground/70 to-transparent p-3">
                 <span className="text-background font-bold text-sm md:text-base">{m.label}</span>
               </div>
-            ))}
             </div>
           ))}
         </div>
