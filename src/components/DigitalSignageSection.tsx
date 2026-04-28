@@ -11,7 +11,7 @@ import totem4 from "@/assets/totem-4.jpg";
 const catalogItems = [
   {
     src: totemMain,
-    alt: "Tótem digital interactivo principal con anuncio",
+    alt: "Tótem",
     title: "Tótem Square Lite",
     description:
       "Tótem elegante y tecnológico, fabricado en España con estructura de acero y aluminio que garantiza durabilidad y un acabado de alta calidad. Su diseño minimalista y su rendimiento lo convierten en una pieza distintiva que combina innovación, estilo y excelencia en cada detalle.",
@@ -19,10 +19,10 @@ const catalogItems = [
   },
   {
     src: totem1,
-    alt: "Tótem digital con anuncio en centro comercial",
-    title: "Centros Comerciales",
+    alt: "Tótem",
+    title: "Tótem Square Lite Eco",
     description:
-      "Tótems orientados al retail con campañas segmentadas por franja horaria. Refuerza promociones, novedades y comunicación de marca en el punto de decisión.",
+      "Tótem sostenible fabricado con materiales reciclados, equivalente a unas 75 botellas de plástico, que combina diseño y responsabilidad ambiental. Incorpora panel acústico para mejorar el sonido y se produce con energía solar, reduciendo las emisiones a cero y ofreciendo una solución elegante y ecológica para cualquier espacio.,
     sizeClass: "md:max-w-[420px] aspect-[3/4]",
   },
   {
