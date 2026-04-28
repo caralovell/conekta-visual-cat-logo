@@ -14,11 +14,10 @@ import mountAngle from "@/assets/mount-angle.png";
 import mountTube from "@/assets/mount-tube.png";
 import mountPlane from "@/assets/mount-plane.png";
 
-const mountItems = [
+const mountGrid = [
   { src: mountWall, label: "Wall View" },
   { src: mountPortrait, label: "Portrait" },
   { src: mountAngle, label: "Angle" },
-  { src: mountTube, label: "Tube" },
   { src: mountPlane, label: "Plane" },
 ];
 
@@ -131,8 +130,27 @@ const DigitalSignageSection = () => (
       {/* Soportes / Mounts */}
       <ScrollReveal>
         <div className="max-w-5xl mx-auto mb-20">
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-            {mountItems.map((m, idx) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
+            {/* Tube vertical a la izquierda (ocupa toda la altura) */}
+            <motion.div
+              whileHover={{ y: -4, scale: 1.01 }}
+              transition={{ type: "spring", stiffness: 200, damping: 18 }}
+              className="relative rounded-xl overflow-hidden shadow-xl bg-muted md:row-span-2 aspect-[3/4] md:aspect-auto"
+            >
+              <img
+                src={mountTube}
+                alt="Tube"
+                className="w-full h-full object-contain"
+                loading="lazy"
+              />
+              <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/70 to-transparent pointer-events-none" />
+              <span className="absolute bottom-3 left-0 right-0 text-center text-white font-bold text-base md:text-lg tracking-wide drop-shadow-lg">
+                Tube
+              </span>
+            </motion.div>
+
+            {/* Cuadrícula 2x2 a la derecha */}
+            {mountGrid.map((m) => (
               <motion.div
                 key={m.label}
                 whileHover={{ y: -4, scale: 1.02 }}
@@ -142,11 +160,11 @@ const DigitalSignageSection = () => (
                 <img
                   src={m.src}
                   alt={m.label}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                <span className="absolute bottom-3 left-0 right-0 text-center text-white font-bold text-sm md:text-base tracking-wide drop-shadow-lg">
+                <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/70 to-transparent pointer-events-none" />
+                <span className="absolute bottom-2 left-0 right-0 text-center text-white font-bold text-sm md:text-base tracking-wide drop-shadow-lg">
                   {m.label}
                 </span>
               </motion.div>
