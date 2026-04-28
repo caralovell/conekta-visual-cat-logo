@@ -8,18 +8,6 @@ import totem2 from "@/assets/totem-2.jpg";
 import totem3 from "@/assets/totem-3.jpg";
 import totem4 from "@/assets/totem-4.jpg";
 import totem5 from "@/assets/totem-5.jpg";
-import mountWall from "@/assets/mount-wall.png";
-import mountPortrait from "@/assets/mount-portrait.png";
-import mountAngle from "@/assets/mount-angle.png";
-import mountTube from "@/assets/mount-tube.png";
-import mountPlane from "@/assets/mount-plane.png";
-
-const mountGrid = [
-  { src: mountWall, label: "Wall View" },
-  { src: mountPortrait, label: "Portrait" },
-  { src: mountAngle, label: "Angle" },
-  { src: mountPlane, label: "Plane" },
-];
 
 const catalogItems = [
   {
@@ -105,12 +93,7 @@ const DigitalSignageSection = () => (
                   whileHover={{ scale: 1.015 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <img
-                    src={item.src}
-                    alt={item.alt}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
+                  <img src={item.src} alt={item.alt} className="w-full h-full object-cover" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
                 </motion.div>
 
@@ -126,72 +109,46 @@ const DigitalSignageSection = () => (
           );
         })}
       </div>
-
-      {/* Soportes / Mounts */}
+      {/* Sub-section: E-Paper (compact) */}
       <ScrollReveal>
-        <div className="max-w-3xl mx-auto mb-20">
-          <div className="mb-8 text-center">
-            <div className="flex items-center justify-center gap-4 mb-4">
-              <div className="glow-line max-w-[220px]" />
-              <span className="text-xs uppercase tracking-[0.3em] text-accent font-primary font-bold">07</span>
-              <div className="glow-line max-w-[220px]" />
+        <div className="max-w-4xl mx-auto grid md:grid-cols-[1fr_auto] gap-6 items-center mb-8">
+          <div>
+            <h3 className="text-lg md:text-xl font-bold text-foreground mb-2">E-Paper</h3>
+            <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+              Pantallas de papel electrónico a todo color para universidades: ideales para señalética de aulas, reservas
+              de salas, horarios, calendarios académicos y comunicación interna, con bajo consumo y máxima visibilidad.
+            </p>
+            <div className="flex flex-wrap gap-2.5 mt-4">
+              {epaperBubbles.map((label, i) => (
+                <motion.span
+                  key={label}
+                  initial={{ opacity: 0, scale: 0.6, y: 10 }}
+                  whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ delay: i * 0.06, type: "spring", stiffness: 200, damping: 14 }}
+                  whileHover={{ scale: 1.08, y: -3 }}
+                  className="inline-flex items-center px-4 py-2 rounded-full bg-accent/10 border border-accent/30 text-sm font-medium text-foreground hover:bg-accent/20 hover:border-accent/60 transition-colors cursor-default shadow-sm"
+                >
+                  {label}
+                </motion.span>
+              ))}
             </div>
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground leading-tight">Tablets</h2>
           </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-[160px_repeat(2,minmax(0,1fr))] gap-3 md:gap-4 items-stretch">
-            {/* Tube vertical a la izquierda (ocupa toda la altura) */}
+          <div className="flex gap-4 items-center">
             <motion.div
-              whileHover={{ y: -4, scale: 1.01 }}
+              whileHover={{ y: -4 }}
               transition={{ type: "spring", stiffness: 200, damping: 18 }}
-              className="relative rounded-xl overflow-hidden shadow-xl md:row-span-2 aspect-[2/3] md:aspect-auto"
+              className="w-full max-w-[260px]"
             >
               <img
-                src={mountTube}
-                alt=""
-                className="absolute inset-0 w-full h-full object-cover scale-110 blur-xl opacity-45"
+                src={epaperDisplay}
+                alt="Pantalla de papel electrónico E-Paper"
+                className="w-full h-auto object-contain"
                 loading="lazy"
-                aria-hidden="true"
+                width={1024}
+                height={768}
               />
-              <img
-                src={mountTube}
-                alt="Tube"
-                className="relative z-10 w-full h-full object-contain scale-[1.18] md:scale-[1.25]"
-                loading="lazy"
-              />
-              <div className="absolute inset-x-0 bottom-0 z-20 h-24 bg-gradient-to-t from-primary/80 to-transparent pointer-events-none" />
-              <span className="absolute bottom-3 left-0 right-0 z-30 text-center text-primary-foreground font-bold text-base md:text-lg tracking-wide drop-shadow-lg">
-                Tube
-              </span>
             </motion.div>
-
-            {/* Cuadrícula 2x2 a la derecha */}
-            {mountGrid.map((m) => (
-              <motion.div
-                key={m.label}
-                whileHover={{ y: -4, scale: 1.02 }}
-                transition={{ type: "spring", stiffness: 200, damping: 18 }}
-                className="relative rounded-xl overflow-hidden shadow-xl aspect-square"
-              >
-                <img
-                  src={m.src}
-                  alt=""
-                  className="absolute inset-0 w-full h-full object-cover scale-110 blur-xl opacity-45"
-                  loading="lazy"
-                  aria-hidden="true"
-                />
-                <img
-                  src={m.src}
-                  alt={m.label}
-                  className="relative z-10 w-full h-full object-cover"
-                  loading="lazy"
-                />
-                <div className="absolute inset-x-0 bottom-0 z-20 h-20 bg-gradient-to-t from-primary/80 to-transparent pointer-events-none" />
-                <span className="absolute bottom-2 left-0 right-0 z-30 text-center text-primary-foreground font-bold text-sm md:text-base tracking-wide drop-shadow-lg">
-                  {m.label}
-                </span>
-              </motion.div>
-            ))}
           </div>
         </div>
       </ScrollReveal>
