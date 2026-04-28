@@ -8,6 +8,7 @@ import totem2 from "@/assets/totem-2.jpg";
 import totem3 from "@/assets/totem-3.jpg";
 import totem4 from "@/assets/totem-4.jpg";
 import totem5 from "@/assets/totem-5.jpg";
+import epaperDisplay from "@/assets/epaper-display.jpg";
 
 const catalogItems = [
   {
