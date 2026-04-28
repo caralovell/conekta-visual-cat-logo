@@ -37,9 +37,9 @@ const catalogItems = [
   {
     src: totem3,
     alt: "Kiosko",
-    title: "Kiosko Cube",
+    title: "Kiosko Touch",
     description:
-      "Atril funcional de aluminio diseñado para pantallas de hasta 17”, con estructura robusta y sistema de apertura frontal con cerradura. Su interior permite integrar impresora y periféricos, y la pantalla se fija fácilmente mediante soporte VESA.",
+      "Kiosco de suelo con pantalla inclinada para mejorar la visibilidad y la interacción. Robusto, estable y versátil, permite integrar periféricos y adaptarse a múltiples usos como gestión de turnos o consulta de servicios.",
     sizeClass: "md:max-w-[400px] aspect-[3/4]",
   },
   {
