@@ -156,7 +156,7 @@ const DigitalSignageSection = () => (
               <img
                 src={mountTube}
                 alt="Tube"
-                className="relative z-10 w-full h-full object-contain p-2 md:p-3"
+                className="relative z-10 w-full h-full object-contain scale-[1.18] md:scale-[1.25]"
                 loading="lazy"
               />
               <div className="absolute inset-x-0 bottom-0 z-20 h-24 bg-gradient-to-t from-primary/80 to-transparent pointer-events-none" />
