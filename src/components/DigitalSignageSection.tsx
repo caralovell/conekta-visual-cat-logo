@@ -9,6 +9,11 @@ import totem3 from "@/assets/totem-3.jpg";
 import totem4 from "@/assets/totem-4.jpg";
 import totem5 from "@/assets/totem-5.jpg";
 import epaperDisplay from "@/assets/epaper-display.png";
+import tabletTube from "@/assets/tablet-tube.png";
+import tabletWallView from "@/assets/tablet-wall-view.png";
+import tabletPortrait from "@/assets/tablet-portrait.png";
+import tabletAngle from "@/assets/tablet-angle.png";
+import tabletPlane from "@/assets/tablet-plane.png";
 
 const catalogItems = [
   {
@@ -110,6 +115,69 @@ const DigitalSignageSection = () => (
           );
         })}
       </div>
+
+      {/* ──────── Sección Tablets ──────── */}
+      <ScrollReveal>
+        <div className="max-w-5xl mx-auto mb-16">
+          {/* Divider con número y título */}
+          <div className="flex items-center gap-4 mb-10">
+            <div className="h-px flex-1 bg-accent" />
+            <span className="text-xs uppercase tracking-[0.25em] text-accent font-bold">07</span>
+            <h3 className="text-2xl md:text-3xl font-bold text-foreground">Tablets</h3>
+            <div className="h-px flex-1 bg-accent" />
+          </div>
+
+          {/* Layout: Tube vertical a la izquierda + grid 2x2 a la derecha */}
+          <div className="grid grid-cols-[1fr_2fr] md:grid-cols-[280px_1fr] gap-4 md:gap-6 items-stretch">
+            {/* Tube - izquierda, vertical */}
+            <motion.div
+              className="relative rounded-xl overflow-hidden bg-muted/20 h-full min-h-[360px] md:min-h-[480px]"
+              whileHover={{ scale: 1.01 }}
+              transition={{ duration: 0.3 }}
+            >
+              <img
+                src={tabletTube}
+                alt="Tablet Tube"
+                className="w-full h-full object-contain object-center"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+              <span className="absolute bottom-4 left-4 text-white font-bold text-sm md:text-base tracking-wide drop-shadow-lg">
+                Tube
+              </span>
+            </motion.div>
+
+            {/* Grid 2x2 a la derecha */}
+            <div className="grid grid-cols-2 gap-4 md:gap-6">
+              {[
+                { src: tabletWallView, label: "Wall View" },
+                { src: tabletPortrait, label: "Portrait" },
+                { src: tabletAngle, label: "Angle" },
+                { src: tabletPlane, label: "Plane" },
+              ].map((tab) => (
+                <motion.div
+                  key={tab.label}
+                  className="relative rounded-xl overflow-hidden bg-muted/20 aspect-[4/3]"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <img
+                    src={tab.src}
+                    alt={`Tablet ${tab.label}`}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                  <span className="absolute bottom-3 left-3 text-white font-bold text-xs md:text-sm tracking-wide drop-shadow-lg">
+                    {tab.label}
+                  </span>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </ScrollReveal>
+
       {/* Sub-section: E-Paper (compact) */}
       <ScrollReveal>
         <div className="max-w-4xl mx-auto grid md:grid-cols-[1fr_auto] gap-6 items-center mb-8">
