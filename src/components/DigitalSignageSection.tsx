@@ -9,7 +9,6 @@ import totem3 from "@/assets/totem-3.jpg";
 import totem4 from "@/assets/totem-4.jpg";
 import totem5 from "@/assets/totem-5.jpg";
 import epaperDisplay from "@/assets/epaper-display.png";
-import tabletTube from "@/assets/mount-tube.png";
 import tabletWallView from "@/assets/mount-wall.png";
 import tabletPortrait from "@/assets/mount-portrait.png";
 import tabletAngle from "@/assets/mount-angle.png";
