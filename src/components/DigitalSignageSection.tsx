@@ -128,6 +128,33 @@ const DigitalSignageSection = () => (
         })}
       </div>
 
+      {/* Soportes / Mounts */}
+      <ScrollReveal>
+        <div className="max-w-5xl mx-auto mb-20">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+            {mountItems.map((m, idx) => (
+              <motion.div
+                key={m.label}
+                whileHover={{ y: -4, scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 200, damping: 18 }}
+                className="relative rounded-xl overflow-hidden shadow-xl aspect-square bg-muted"
+              >
+                <img
+                  src={m.src}
+                  alt={m.label}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                <span className="absolute bottom-3 left-0 right-0 text-center text-white font-bold text-sm md:text-base tracking-wide drop-shadow-lg">
+                  {m.label}
+                </span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </ScrollReveal>
+
       {/* Sub-section: Gestión de Contenido (compact) */}
       <ScrollReveal>
         <div className="max-w-4xl mx-auto grid md:grid-cols-[1fr_auto] gap-6 items-center">
