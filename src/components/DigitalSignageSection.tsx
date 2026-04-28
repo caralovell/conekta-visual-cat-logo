@@ -12,9 +12,9 @@ const catalogItems = [
   {
     src: totemMain,
     alt: "Tótem digital interactivo principal con anuncio",
-    title: "Tótem Interactivo Premium",
+    title: "Tótem Square Lite",
     description:
-      "Solución insignia de gran formato pensada para hubs de alto tráfico. Pantalla táctil de alta luminosidad, contenido dinámico y experiencia inmersiva para captar la atención del usuario.",
+      "Tótem elegante y tecnológico, fabricado en España con estructura de acero y aluminio que garantiza durabilidad y un acabado de alta calidad. Su diseño minimalista y su rendimiento lo convierten en una pieza distintiva que combina innovación, estilo y excelencia en cada detalle.",
     sizeClass: "md:max-w-[520px] aspect-[4/5]",
   },
   {
@@ -92,12 +92,7 @@ const DigitalSignageSection = () => (
                   whileHover={{ scale: 1.015 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <img
-                    src={item.src}
-                    alt={item.alt}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
+                  <img src={item.src} alt={item.alt} className="w-full h-full object-cover" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
                 </motion.div>
 
@@ -106,9 +101,7 @@ const DigitalSignageSection = () => (
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">{item.title}</h3>
-                  <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                    {item.description}
-                  </p>
+                  <p className="text-base md:text-lg text-muted-foreground leading-relaxed">{item.description}</p>
                 </div>
               </div>
             </ScrollReveal>
