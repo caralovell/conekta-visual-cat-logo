@@ -127,33 +127,44 @@ const DigitalSignageSection = () => (
 
       {/* Tablet mounts gallery */}
       <ScrollReveal delay={0.1}>
-        <div className="max-w-4xl mx-auto mb-16 grid grid-cols-2 md:grid-cols-5 gap-4 items-stretch">
+        <div className="max-w-4xl mx-auto mb-16 grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] gap-4 items-stretch">
           {/* Tube — vertical */}
-          <div className="relative rounded-xl overflow-hidden bg-card border border-border aspect-[3/4]">
+          <motion.div
+            className="relative rounded-xl overflow-hidden bg-card border border-border aspect-[1/2] md:aspect-auto"
+            whileHover={{ y: -4 }}
+            transition={{ type: "spring", stiffness: 200, damping: 18 }}
+          >
             <img
               src={mountTube}
               alt="Soporte Tube"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain p-3"
               loading="lazy"
             />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-foreground/70 to-transparent p-3">
               <span className="text-background font-bold text-sm md:text-base">Tube</span>
             </div>
-          </div>
+          </motion.div>
 
-          {[
-            { src: mountWall, label: "Wall View" },
-            { src: mountPortrait, label: "Portrait" },
-            { src: mountAngle, label: "Angle" },
-            { src: mountPlane, label: "Plane" },
-          ].map((m) => (
-            <div key={m.label} className="relative rounded-xl overflow-hidden bg-card border border-border aspect-[3/4]">
-              <img src={m.src} alt={`Soporte ${m.label}`} className="w-full h-full object-cover" loading="lazy" />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-foreground/70 to-transparent p-3">
-                <span className="text-background font-bold text-sm md:text-base">{m.label}</span>
-              </div>
-            </div>
-          ))}
+          <div className="grid grid-cols-2 gap-4">
+            {[
+              { src: mountWall, label: "Wall View" },
+              { src: mountPortrait, label: "Portrait" },
+              { src: mountAngle, label: "Angle" },
+              { src: mountPlane, label: "Plane" },
+            ].map((m) => (
+              <motion.div
+                key={m.label}
+                className="relative rounded-xl overflow-hidden bg-card border border-border aspect-square"
+                whileHover={{ y: -4 }}
+                transition={{ type: "spring", stiffness: 200, damping: 18 }}
+              >
+                <img src={m.src} alt={`Soporte ${m.label}`} className="w-full h-full object-cover" loading="lazy" />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-foreground/70 to-transparent p-3">
+                  <span className="text-background font-bold text-sm md:text-base">{m.label}</span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </ScrollReveal>
 
