@@ -49,6 +49,14 @@ const catalogItems = [
       "Comunicación interna, reservas de salas y dashboards en tiempo real. Diseño elegante que se integra en el lenguaje visual de cualquier oficina.",
     sizeClass: "md:max-w-[460px] aspect-square",
   },
+  {
+    src: totem3,
+    alt: "Tótem digital con anuncio en museo",
+    title: "Espacios Culturales",
+    description:
+      "Experiencias interactivas para museos y exposiciones. Contenido multimedia, multi-idioma y accesibilidad integrada para enriquecer la visita.",
+    sizeClass: "md:max-w-[400px] aspect-[3/4]",
+  },
 ];
 
 const DigitalSignageSection = () => (
