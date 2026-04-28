@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
-import { Button } from "@/components/ui/button";
 import LogopostLogo from "./LogopostLogo";
 import asciresLogo from "@/assets/ascires-logo.png";
 
@@ -27,11 +27,13 @@ const BudgetSection = () => (
       </ScrollReveal>
 
       <ScrollReveal delay={0.1}>
-        <a href={BUDGET_URL} target="_blank" rel="noopener noreferrer">
-          <Button variant="cta" size="default" className="text-base px-8 py-5 shadow-lg shadow-accent/30 group">
-            Solicitar Presupuesto
-            <span className="inline-block transition-transform group-hover:translate-x-1 ml-1">→</span>
-          </Button>
+        <a href={BUDGET_URL} target="_blank" rel="noopener noreferrer" className="inline-block">
+          <button className="group relative bg-gradient-to-r from-accent to-accent/70 text-accent-foreground px-6 py-3 rounded-full font-bold text-sm transition-all duration-300 hover:shadow-[0_0_40px_hsl(var(--accent)/0.3)] hover:scale-[1.03] flex items-center overflow-hidden">
+            <span className="mr-7 transition-opacity duration-500 group-hover:opacity-0">Solicitar Presupuesto</span>
+            <span className="absolute right-1 top-1 bottom-1 rounded-full z-10 grid w-8 place-items-center transition-all duration-500 bg-accent-foreground/20 group-hover:w-[calc(100%-0.5rem)] group-active:scale-95">
+              <ArrowRight size={14} strokeWidth={2} />
+            </span>
+          </button>
         </a>
       </ScrollReveal>
     </div>
