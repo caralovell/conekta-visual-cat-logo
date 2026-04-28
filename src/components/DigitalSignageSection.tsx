@@ -130,6 +130,15 @@ const DigitalSignageSection = () => (
       {/* Soportes / Mounts */}
       <ScrollReveal>
         <div className="max-w-3xl mx-auto mb-20">
+          <div className="mb-8 text-center">
+            <div className="flex items-center justify-center gap-4 mb-4">
+              <div className="glow-line max-w-[220px]" />
+              <span className="text-xs uppercase tracking-[0.3em] text-accent font-primary font-bold">07</span>
+              <div className="glow-line max-w-[220px]" />
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground leading-tight">Tablets</h2>
+          </div>
+
           <div className="grid grid-cols-2 md:grid-cols-[160px_repeat(2,minmax(0,1fr))] gap-3 md:gap-4 items-stretch">
             {/* Tube vertical a la izquierda (ocupa toda la altura) */}
             <motion.div
@@ -147,7 +156,7 @@ const DigitalSignageSection = () => (
               <img
                 src={mountTube}
                 alt="Tube"
-                className="relative z-10 w-full h-full object-contain p-5 md:p-6"
+                className="relative z-10 w-full h-full object-contain p-2 md:p-3"
                 loading="lazy"
               />
               <div className="absolute inset-x-0 bottom-0 z-20 h-24 bg-gradient-to-t from-primary/80 to-transparent pointer-events-none" />
@@ -174,7 +183,7 @@ const DigitalSignageSection = () => (
                 <img
                   src={m.src}
                   alt={m.label}
-                  className="relative z-10 w-full h-full object-contain p-3 md:p-4"
+                  className="relative z-10 w-full h-full object-cover"
                   loading="lazy"
                 />
                 <div className="absolute inset-x-0 bottom-0 z-20 h-20 bg-gradient-to-t from-primary/80 to-transparent pointer-events-none" />
