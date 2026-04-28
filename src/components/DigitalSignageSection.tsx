@@ -9,11 +9,11 @@ import totem3 from "@/assets/totem-3.jpg";
 import totem4 from "@/assets/totem-4.jpg";
 import totem5 from "@/assets/totem-5.jpg";
 import epaperDisplay from "@/assets/epaper-display.png";
-import tabletTube from "@/assets/mount-tube.png";
-import tabletWallView from "@/assets/mount-wall.png";
-import tabletPortrait from "@/assets/mount-portrait.png";
-import tabletAngle from "@/assets/mount-angle.png";
-import tabletPlane from "@/assets/mount-plane.png";
+import tabletTube from "@/assets/tablet-tube.png";
+import tabletWallView from "@/assets/tablet-wall-view.png";
+import tabletPortrait from "@/assets/tablet-portrait.png";
+import tabletAngle from "@/assets/tablet-angle.png";
+import tabletPlane from "@/assets/tablet-plane.png";
 
 const catalogItems = [
   {
@@ -119,36 +119,22 @@ const DigitalSignageSection = () => (
       {/* ──────── Sección Tablets ──────── */}
       <ScrollReveal>
         <div className="max-w-3xl mx-auto mb-16">
-          {/* Divider igual al de Digital Signage: línea arriba, 07 debajo, título */}
-          <div className="flex justify-center my-4">
-            <div className="glow-line" />
-          </div>
-          <div className="text-center max-w-3xl mx-auto mb-10">
-            <span className="inline-block text-xs uppercase tracking-[0.3em] text-accent font-primary font-bold mb-4">
-              07
-            </span>
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground">Tablets</h2>
+          {/* Divider: 07 arriba, línea, TABLETS debajo */}
+          <div className="text-center mb-8">
+            <span className="block text-xs uppercase tracking-[0.25em] text-accent font-bold mb-2">07</span>
+            <div className="h-px w-full bg-accent/60 mb-2" />
+            <span className="block text-sm uppercase tracking-[0.35em] text-accent font-medium">Tablets</span>
           </div>
 
           {/* Layout: Tube izquierda + grid 2x2 derecha */}
           <div className="flex gap-3 items-stretch max-w-2xl mx-auto">
             {/* Tube — columna estrecha */}
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.3 }}
-              className="relative rounded-lg overflow-hidden bg-muted/10 w-[110px] md:w-[130px] flex-shrink-0"
-            >
-              <img
-                src={tabletTube}
-                alt="Tablet Tube"
-                className="w-full h-full object-contain object-bottom"
-                loading="lazy"
-              />
-              <div className="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-black/40 to-transparent" />
-              <span className="absolute bottom-2 left-2 text-white font-semibold text-[10px] tracking-wide drop-shadow-lg">
+            <div className="relative w-[110px] md:w-[130px] flex-shrink-0 self-end">
+              <img src={tabletTube} alt="Tablet Tube" className="w-full h-auto object-contain" loading="lazy" />
+              <span className="block text-center text-foreground font-semibold text-[10px] tracking-wide mt-2">
                 Tube
               </span>
-            </motion.div>
+            </div>
 
             {/* Grid 2x2 */}
             <div className="grid grid-cols-2 gap-2.5 md:gap-3 flex-1">
